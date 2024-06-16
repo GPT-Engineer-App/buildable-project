@@ -47,17 +47,13 @@ table: venues
     name: string
     capacity: number (bigint)
     type: string
+
 */
 
-// Profiles hooks
+// Hooks for profiles table
 export const useProfiles = () => useQuery({
     queryKey: ['profiles'],
     queryFn: () => fromSupabase(supabase.from('profiles').select('*')),
-});
-
-export const useProfile = (id) => useQuery({
-    queryKey: ['profiles', id],
-    queryFn: () => fromSupabase(supabase.from('profiles').select('*').eq('id', id).single()),
 });
 
 export const useAddProfile = () => {
@@ -90,15 +86,10 @@ export const useDeleteProfile = () => {
     });
 };
 
-// Events hooks
+// Hooks for events table
 export const useEvents = () => useQuery({
     queryKey: ['events'],
     queryFn: () => fromSupabase(supabase.from('events').select('*')),
-});
-
-export const useEvent = (id) => useQuery({
-    queryKey: ['events', id],
-    queryFn: () => fromSupabase(supabase.from('events').select('*').eq('id', id).single()),
 });
 
 export const useAddEvent = () => {
@@ -131,15 +122,10 @@ export const useDeleteEvent = () => {
     });
 };
 
-// Comments hooks
+// Hooks for comments table
 export const useComments = () => useQuery({
     queryKey: ['comments'],
     queryFn: () => fromSupabase(supabase.from('comments').select('*')),
-});
-
-export const useComment = (id) => useQuery({
-    queryKey: ['comments', id],
-    queryFn: () => fromSupabase(supabase.from('comments').select('*').eq('id', id).single()),
 });
 
 export const useAddComment = () => {
@@ -172,15 +158,10 @@ export const useDeleteComment = () => {
     });
 };
 
-// Venues hooks
+// Hooks for venues table
 export const useVenues = () => useQuery({
     queryKey: ['venues'],
     queryFn: () => fromSupabase(supabase.from('venues').select('*')),
-});
-
-export const useVenue = (id) => useQuery({
-    queryKey: ['venues', id],
-    queryFn: () => fromSupabase(supabase.from('venues').select('*').eq('id', id).single()),
 });
 
 export const useAddVenue = () => {
